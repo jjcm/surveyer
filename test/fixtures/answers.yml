@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user: 1
+  quiz: 1
+  option: 1
+
+two:
+  user: 1
+  quiz: 1
+  option: 1

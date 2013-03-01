@@ -1,0 +1,34 @@
+<%= form_for([@option], remote: true) do |f| %>
+
+  <div class="field" >
+    <%= f.label :answer %><br />
+    <%= f.text_field :answer %>
+  </div>
+  <div class="field">
+    Followup Question<br />
+    <%= f.text_field :question %>
+  </div>
+  <div class="field">
+    <%= f.label :inference %><br />
+    <%= f.text_field :inference %>
+  </div>
+  <div class="field" style="visibility: hidden; position: absolute;">
+    <%= f.label :quiz_id %><br />
+    <%= f.number_field :quiz_id, :value => params[:quiz] %>
+  </div>
+  <div class="field" style="visibility: hidden; position: absolute;">
+    <%= f.label :option_id %><br />
+    <%= f.number_field :option_id, :value => params[:id] %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "create", :id => "createNewOption" %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  $('#createNewOption').click(function(){
+      var answers = $('#answers');
+      answers.append('<tr><td>' + $('#option_answer').val() + '</td><td></td><td></td></tr>');
+     
+  });
+</script>

@@ -1,0 +1,33 @@
+<h1>Thank you for participating in this study. <br/>Please select a sequence below to get started</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <%if @user.id == 1%>
+    <th>User</th>
+    <th>Rating</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <%end%>
+  </tr>
+
+<% @quizzes.each do |quiz| %>
+  <tr>
+    <td><%= link_to quiz.name, quiz %></td>
+    <%if @user.id == 1%>
+    <td><%= quiz.user.name %></td>
+    <td><%= quiz.rating %></td>
+    <td><%= link_to 'Edit', edit_quiz_path(quiz) %></td>
+    <td><%= button_to 'Clone', :remote => true, :action => "clone", :id => quiz.id%></td>
+    <td><%= link_to 'Destroy', quiz, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%end%>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%if @user.id == 1%>
+<%= link_to 'New sequence', new_quiz_path %>
+<%end%>

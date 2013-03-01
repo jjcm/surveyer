@@ -1,0 +1,12 @@
+<% if option %>
+<tr><td><a href="#" onclick="st.onClick(<%=option.id%>)"><%=option.inference%></a></td>
+
+<td>
+  <div style="position: absolute; display: none;">
+    <%= f.label :answer_id, "answer" %><br />
+    <%= f.number_field :answer_id %>
+  </div>
+  <%= f.check_box :response %>
+</td>
+</tr>
+<% end %>

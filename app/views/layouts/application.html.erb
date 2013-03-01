@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Questionnaire</title>
+  <%= stylesheet_link_tag    "application.css", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "jit" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="logo">
+    <img src="/assets/msLogo.png"/> <span>Research</span>
+  </div>
+  <div id="nav">
+    <ul>
+      <li><a href="/sequences">Sequences</a></li>
+      <%if @user && @user.id == 1%>
+      <li><%=link_to "Users", :controller => "users", :action => "index"%></li>
+      <%end%>
+    </ul>
+  </div>
+  <div id="userControls" style="position: absolute; right: 20px; top: 0px;">
+    <% if @user%>
+    <p><%= link_to @user.name, @user %></p>
+    <p><a href="/signout">log out</a></p>
+    <% else%>
+    <p><a href="/signin">log in</a></p>
+    <% end%>
+  </div>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+<%= yield %>
+
+</body>
+</html>
