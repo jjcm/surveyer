@@ -42,3 +42,6 @@ gem "amoeba", "~> 2.0.0"
 
 # To use debugger
 # gem 'debugger'
+#
+
+gem 'capistrano'
