@@ -31,8 +31,8 @@ require 'bundler/capistrano'
 ##                                         ##
 #############################################
 
-GITHUB_REPOSITORY_NAME = ''
-LINODE_SERVER_HOSTNAME = ''
+GITHUB_REPOSITORY_NAME = 'jjcm/surveyer'
+LINODE_SERVER_HOSTNAME = 'copperfieldblaine.com'
 
 #############################################
 #############################################
