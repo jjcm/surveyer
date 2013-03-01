@@ -63,7 +63,7 @@ set :admin_runner,               "www-data"
 
 # SCM Options
 set :scm,        :git
-set :repository, "git@github.com:railsrumble/#{GITHUB_REPOSITORY_NAME}.git"
+set :repository, "git@github.com:#{GITHUB_REPOSITORY_NAME}.git"
 set :branch,     "master"
 
 # Roles

@@ -10,6 +10,7 @@ gem 'devise'
 
 gem 'sqlite3'
 gem 'therubyracer'
+gem 'mysql2'
 
 
 # Gems used only for assets and not required
